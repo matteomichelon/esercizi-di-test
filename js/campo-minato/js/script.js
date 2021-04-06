@@ -60,9 +60,17 @@ while ( nobomb && arrayNumUser.length < maxUserInsert ) {
     // Se è una bomba, modifico flag
     // altrimenti se il numero non è già stato inserito .push array
 }
-console.log( inputNumUser );
 
 // Stampo all'utente il lenght dell'array di numeri corretti inseriti
+
+// Stampo se è stato inserito un numero bomba
+// Altrimenti dichiaro l'utente vincitore del gioco
+if ( inputNumUser != -1 ) {
+    alert("Sei riuscito ad inserire " + arrayNumUser.length + " numeri prima di trovare il numero bomba " + inputNumUser)
+    console.log( inputNumUser );
+} else {
+    alert("complimenti!")
+}
 
 
 /* Funzioni */
