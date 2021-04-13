@@ -9,7 +9,7 @@ $( document ).ready( function () {
     //===
 
     //Creo un array di oggetti quadre di calcio
-    var squadreDiCalcio = [
+    var squadre = [
 
         {
             'nome': 'Vicenza',
@@ -34,14 +34,14 @@ $( document ).ready( function () {
     ];
 
     // Creo un ciclo per leggere tutti gli oggetti all'interno del mio array
-    for ( var i = 0; i < squadreDiCalcio.length; i++ ) {
+    for ( var i = 0; i < squadre.length; i++ ) {
 
         // Creo una variabile della squadra attualmente attiva nel mio ciclo
-        var thisSquadra = squadreDiCalcio[ i ];
+        var thisSquadra = squadre[ i ];
 
-        // Creo 2 variabili di numeri random da 1 a 10 per i punti fatti e i falli subiti
-        var puntiFattiRandom = Math.floor( Math.random() * 10 ) + 1;
-        var falliSubitiRandom = Math.floor( Math.random() * 10 ) + 1;
+        // Creo 2 variabili di numeri random per i punti fatti e i falli subiti
+        var puntiFattiRandom = Math.floor( Math.random() * 80 ) + 1;
+        var falliSubitiRandom = Math.floor( Math.random() * 100 ) + 1;
 
         // Modifico i valori attuali del mio array
         thisSquadra.punti_fatti = puntiFattiRandom;
