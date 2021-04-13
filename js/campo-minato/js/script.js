@@ -13,7 +13,7 @@
 var numBomb = [];
 var numRandom = 0;
 
-// Dichiaro gli estremi (compresi) per cui il gioco debba continuare.
+// 1.1- Dichiaro gli estremi (compresi) per cui il gioco debba continuare.
 var numMin = 1;
 var numMax = 100;
 var numBombMax = 16;
@@ -31,7 +31,7 @@ while ( numBomb.length < numBombMax ) {
 
 var arrayNumUser = [];
 
-// Calcolo il valore massimo per cui l'utente debba inserire numeri
+// 2.1- Calcolo il valore massimo per cui l'utente debba inserire numeri
 var maxUserInsert = numMax - numBombMax;
 
 // 3- Creo una variabile Boolean flag che mi dice se è stata trovata una bomba
@@ -66,10 +66,10 @@ while ( nobomb && arrayNumUser.length < maxUserInsert ) {
 // Stampo se è stato inserito un numero bomba
 // Altrimenti dichiaro l'utente vincitore del gioco
 if ( inputNumUser != -1 ) {
-    alert("Sei riuscito ad inserire " + arrayNumUser.length + " numeri prima di trovare il numero bomba " + inputNumUser)
+    alert( "Sei riuscito ad inserire " + arrayNumUser.length + " numeri prima di trovare il numero bomba " + inputNumUser )
     console.log( inputNumUser );
 } else {
-    alert("complimenti!")
+    alert( "complimenti!" )
 }
 
 
