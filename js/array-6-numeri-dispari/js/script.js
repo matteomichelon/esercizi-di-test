@@ -14,3 +14,14 @@ for ( i = 0; i < 6; i++ ) {
 
 alert( 'Hai inserito i seguenti numeri dispari ' + mioArray );
 
+let nome = 'matteo';
+let cognome = 'michelon';
+let eta = 31;
+
+const studente = {
+    nome,
+    cognome,
+    eta
+}
+
+console.log( studente );
