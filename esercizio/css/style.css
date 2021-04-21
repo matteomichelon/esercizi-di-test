@@ -58,7 +58,7 @@ li {
 
 /* New todo */
 
-.new-todo {
+.new-todo,.filter-todo {
     text-align: center;
     padding: 20px;
 }
@@ -76,7 +76,13 @@ li {
     padding: 7px;
 }
 
-.delete{
+.to-do-action,.to-do-action li{
     float: right;
+}
+
+.to-do-action i{
+    margin-left: 20px;
     cursor: pointer;
 }
+
+.toggle-done 
