@@ -26,5 +26,57 @@ a {
 
 li {
     list-style-type: none;
-    display: inline-block;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+}
+
+.text-input {
+    padding: 10px 20px;
+    min-width: 300px;
+    border-radius: 10px;
+    border-width: 1px;
+    margin-right: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+/* Logo */
+
+.logo img {
+    width: 150px;
+    display: block;
+    margin: auto;
+}
+
+/* New todo */
+
+.new-todo {
+    text-align: center;
+    padding: 20px;
+}
+
+/* todo container */
+
+.todos-container {
+    background-color: #F5F7F7;
+    padding: 35px;
+}
+
+.todos-list {
+    border-bottom: 1px solid lightgrey;
+    font-size: 20px;
+    padding: 7px;
+}
+
+.delete{
+    float: right;
+    cursor: pointer;
 }
