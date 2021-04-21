@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Title</title>
+
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Link FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
+</head>
+
+<body>
+
+    <div id="root">
+
+        <div class="container">
+
+            <!-- Logo -->
+            <div class="logo">
+                <img src="https://www.boolean.careers/images/misc/logo.png" alt="Boolean Logo">
+            </div>
+            <!-- end Logo -->
+
+            <!-- Filter todo -->
+            <div class="filter-todo">
+                <input class="text-input" type="text" placeholder="Filtra qui"
+                    v-model="userFilterText"
+                    v-on:keyup="filterTodos()">
+            </div>
+            <!-- end Filter todo -->
+
+            <!-- Filter isDOne false -->
+            <div class="filterDone">
+                <label for="">Premi per controllare tutti i todo da fare</label>
+                <button class="btn"
+                    v-on:click="filterIsDoneFalse()">Da fare</button>
+            </div>
+            <!-- Filter isDOne false -->
+
+            <!-- New todo -->
+            <div class="new-todo">
+
+                <input class="text-input" placeholder="Nuovo Todo" type="text"
+                    v-model="pushText" v-on:keyup.enter="pushTextOnArray">
+
+                <button class="btn"
+                    v-on:click="pushTextOnArray()">Aggiungi</button>
+
+            </div>
+            <!-- end New todo -->
+
+            <!-- Lista todos -->
+            <div class="todos-container">
+
+                <ul class="todos-list">
+
+                    <li v-for="(todo, index) in todos"
+                        v-if="todo.filter"
+                        v-bind:class="{ 'done': todo.isDone }">
+                        {{ todo.text }}
+                        <div class="to-do-action">
+                            <span class="toggle-done"
+                                v-on:click="thisDone(index)">
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span class="delete"
+                                v-on:click="deleteThisFromArray(index)">
+                                <i class="fa fa-times" aria-hidden="true"></i>
+                            </span>
+                        </div>
+
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- end Lista todos -->
+
+        </div>
+
+    </div>
+
+    <!-- Script js,Jquery and Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>

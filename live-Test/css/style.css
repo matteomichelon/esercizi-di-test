@@ -1,0 +1,95 @@
+/*  
+    @media screen and (max-width: 768px) {}
+    @media screen and (min-width:769px) and (max-width:991px) {}
+    @media screen and (min-width: 992px) {}
+*/
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* COMMON */
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style-type: none;
+}
+
+.container {
+    max-width: 80%;
+    margin: auto;
+}
+
+.text-input {
+    padding: 10px 20px;
+    min-width: 300px;
+    border-radius: 10px;
+    border-width: 1px;
+    margin-right: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+/* Logo */
+
+.logo img {
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+
+/* New todo */
+
+.new-todo, .filter-todo, .filterDone {
+    text-align: center;
+    padding: 20px;
+}
+
+/* todo container */
+
+.todos-container {
+    background-color: #F5F7F7;
+    padding: 35px;
+}
+
+.todos-list li {
+    border-bottom: 1px solid lightgrey;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.to-do-action, 
+.to-do-action li {
+    float: right;
+}
+
+.to-do-action i {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.todos-list li.done{
+    background-color: yellowgreen;
+}
+.todos-list li.done .fa-star{
+    color: yellow;
+}
