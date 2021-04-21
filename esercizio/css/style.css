@@ -51,14 +51,15 @@ li {
 /* Logo */
 
 .logo img {
-    width: 150px;
+    width: 250px;
+    height: auto;
     display: block;
-    margin: auto;
+    margin: 10px auto;
 }
 
 /* New todo */
 
-.new-todo,.filter-todo {
+.new-todo, .filter-todo, .filterDone {
     text-align: center;
     padding: 20px;
 }
@@ -70,19 +71,25 @@ li {
     padding: 35px;
 }
 
-.todos-list {
+.todos-list li {
     border-bottom: 1px solid lightgrey;
     font-size: 20px;
-    padding: 7px;
+    padding: 10px;
 }
 
-.to-do-action,.to-do-action li{
+.to-do-action, 
+.to-do-action li {
     float: right;
 }
 
-.to-do-action i{
+.to-do-action i {
     margin-left: 20px;
     cursor: pointer;
 }
 
-.toggle-done 
+.todos-list li.done{
+    background-color: yellowgreen;
+}
+.todos-list li.done .fa-star{
+    color: yellow;
+}
