@@ -1,13 +1,3 @@
-/* Document Ready */
-$( document ).ready( function () {
-
-    //====
-    /* write here if you use jQuery*/
-    //====
-
-} );
-/* end Document Ready */
-
 /* Vue */
 
 var app = new Vue(
@@ -17,30 +7,114 @@ var app = new Vue(
         /* DATA */
         data: {
 
+            pushText: 'test',
+            arrayFilms: [],
+            arrayTelefilms: []
+
         },
+        /* end DATA */
 
         /* METHODS */
         methods: {
 
-        },
+            /* Funzione callApi */
+            // Funzione per richiamare API
+            callApi () {
+                this.film( this.pushText );
+                /* this.telefilm( this.pushText ); */
+            },
+            /* end Funzione callApi */
 
-        /* MOUNTED */
-        mounted () {
-            axios
-                .get( 'url' )
-                .then( ( response ) => {
-                    const result = response.data;
-                } );
-        },
+            // Ricerca Film
+            // /search/movie
+            film ( text ) {
 
-        /* CREATED */
-        created(){
+                const http = 'https://api.themoviedb.org/3/search/movie';
+
+                axios.get( this.createdGet( http, text ) )
+                    .then( ( response ) => { this.arrayFilms = response.data.results } );
+            },
+
+            createdGet ( http, text ) {
+
+                api_key = '3414ee67882ebd632253f10b916225d8';
+                language = 'it';
+                query = text;
+                page = 1;
+
+                const test = http + api_key + language + query + page;
+
+                return test;
+
+            },
+            /* end METHODS */
+
 
         }
-
     }
 );
 
 /* end Vue */
+
+
+//====
+/*
+Milestone 1:
+Creare un layout base con una searchbar (una input e un button) in cui possiamo
+scrivere completamente o parzialmente il nome di un film. Possiamo, cliccando il
+bottone, cercare sull’API tutti i film che contengono ciò che ha scritto l’utente.
+Vogliamo dopo la risposta dell’API visualizzare a schermo i seguenti valori per ogni
+film trovato:
+1. Titolo
+2. Titolo Originale
+3. Lingua
+4. Voto
+*/
+//====
+
+/* Milestone 1.1 */
+// Creare un layout base con una searchbar (una input e un button) in cui possiamo 
+// scrivere completamente o parzialmente il nome di un film.
+
+/* Mileston 1.2 */
+// Possiamo, cliccando il bottone, 
+// cercare sull’API tutti i film che contengono ciò che ha scritto l’utente.
+
+/* Mileston 1.3 */
+// Vogliamo dopo la risposta dell’API visualizzare a schermo i seguenti valori per ogni
+// film trovato:
+// 1. Titolo
+// 2. Titolo Originale
+// 3. Lingua
+// 4. Voto
+
+
+//===
+/*
+Mileston 2:
+Trasformiamo la stringa statica della lingua in una vera e propria bandiera della
+nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della
+nazione ritornata dall’API (le flag non ci sono in FontAwesome).
+Allarghiamo poi la ricerca anche alle serie tv. Con la stessa azione di ricerca
+dovremo prendere sia i film che corrispondono alla query, sia le serie tv, stando
+attenti ad avere alla fine dei valori simili (le serie e i film hanno campi nel JSON di
+risposta diversi, simili ma non sempre identici)
+Qui un esempio di chiamata per le serie tv:
+https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=s
+crubs
+*/
+//===
+
+/* Mileston 2.1 */
+// Trasformiamo la stringa statica della lingua in una vera e propria bandiera della
+// nazione corrispondente, gestendo il caso in cui non abbiamo la bandiera della
+// nazione ritornata dall’API (le flag non ci sono in FontAwesome).
+
+/* Mileston 2.2 */
+// Con la stessa azione di ricerca dovremo prendere sia i film che corrispondono alla query,
+// sia le serie tv, stando attenti ad avere alla fine dei valori simili 
+// (le serie e i film hanno campi nel JSON di risposta diversi, simili ma non sempre identici)
+// Qui un esempio di chiamata per le serie tv:
+// https://api.themoviedb.org/3/search/tv?api_key=e99307154c6dfb0b4750f6603256716d&language=it_IT&query=scrubs
 
 

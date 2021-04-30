@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Title -->
-    <title>Title</title>
+    <title>TEEEEEEEESTTTTTTTTTT</title>
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="css/style.css">
@@ -36,50 +36,71 @@
     <!-- Vue Container -->
     <div id="root">
 
-        <header>
+        <!-- Container -->
+        <div class="container">
 
-            <img class="logo" src="img/download.png" alt="logo">
+            <!-- HEADER -->
+            <header>
 
-        </header>
+                <!-- Searchbar -->
+                <div class="searchbar">
 
-        <main>
+                    <input class="text-input" placeholder="Scrivi il film da ricercare" type="text"
+                        v-model="pushText" v-on:keyup.enter="callApi()">
 
-            <div class="cd-container display-flex">
-
-                <!-- Single cd -->
-                <div class="cd">
-
-                    <!-- Img -->
-                    <img src="#" alt="">
-                    <!-- end Img -->
-
-                    <!-- Title -->
-                    <div class="cd-title">
-                        New Jersey
-                    </div>
-                    <!-- end Title -->
-
-                    <!-- Author -->
-                    <div class="cd-author">
-                       Bon Jovi
-                    </div>
-                    <!-- end Author -->
-
-                    <!-- Year -->
-                    <div class="cd-year">
-                        1988
-                     </div>
-                     <!-- end Year -->
+                    <button class="btn" v-on:click="callApi()">Ricerca</button>
 
                 </div>
-                <!-- end Single cd -->
+                <!-- end Searchbar -->
 
-            </div>
+            </header>
+            <!-- end HEADER -->
 
-        </main>
+            <!-- MAIN -->
+            <main>
+
+                <!-- v-if Film view -->
+                <div class="film" v-if="arrayFilms.length > 0">
+                    <h2>FILM</h2>
+
+                    <!-- Single Film -->
+                    <div class="film" v-for="film in arrayFilms">
+
+                        <!-- Title -->
+                        <div class="title">
+                            Titolo: {{film.title}}
+                        </div>
+                        <!-- end Title -->
+
+                        <!-- Original Title -->
+                        <div class="original-title">
+                            Titolo Originale: {{film.original_title}}
+                        </div>
+                        <!-- end Original Title -->
+
+                        <!-- Vote -->
+                        <div class="vote">
+                            Voto: {{film.vote_average}}
+                        </div>
+                        <!-- Vote -->
+
+                    </div>
+                    <!-- end Single Film -->
+
+                </div>
+                <!-- end v-if Film view -->
+
+
+            </main>
+            <!-- MAIN -->
+
+        </div>
+        <!-- End Container -->
+
 
     </div>
     <!-- end Vue Container -->
+
 
     <!-- Script javascript -->
     <script type="text/javascript" src="js/script.js"></script>
